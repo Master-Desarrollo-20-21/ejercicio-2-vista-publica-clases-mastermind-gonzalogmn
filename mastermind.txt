@@ -1,0 +1,43 @@
+@startuml
+
+class Mastermind {
+    void play()
+    void resume()
+}
+
+class Player {
+    Combination proposeCombination()
+    boolean resume()
+}
+
+class Board {
+    void generateSecretCombination()
+    void compareSecretCombinationWith(combination)
+}
+
+class Combination {
+    boolean isValid()
+    void showValidationErrors()
+    boolean equals(combination)
+    static Combination generateRandom()
+}
+
+class CombinationRule {
+    boolean isValid(combination)
+    void showMessage(combination)
+}
+
+class CorrectColorsCombinationRule {}
+class CorrectLengthCombinationRule {}
+
+Mastermind --> Player
+Mastermind --> Board
+
+Board o-- "1" Combination
+
+Combination -- "1..n" CombinationRule
+
+CombinationRule <|-- CorrectColorsCombinationRule
+CombinationRule <|-- CorrectLengthCombinationRule
+
+@enduml
