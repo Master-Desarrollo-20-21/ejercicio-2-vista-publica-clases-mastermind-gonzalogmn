@@ -1,4 +1,10 @@
 # ProgramacionOO Ejercicio2
+
+# Solución propuesta
+
+![](mastermind.png)
+
+
 # Vista pública de las clases del juego Mastermind
 
 Realizar en un diagrama UML la vista pública de las clases del juego Mastermind.
