@@ -12,7 +12,12 @@ class Player {
 
 class Board {
     void generateSecretCombination()
-    void compareSecretCombinationWith(combination)
+    bool equalsSecretCombination(combination)
+}
+
+class Attempt {
+    void execute()
+    boolean isSuccessful()
 }
 
 class Combination {
@@ -20,6 +25,10 @@ class Combination {
     void showValidationErrors()
     boolean equals(combination)
     static Combination generateRandom()
+}
+
+class SecretCombination {
+
 }
 
 class CombinationRule {
@@ -32,8 +41,15 @@ class CorrectLengthCombinationRule {}
 
 Mastermind --> Player
 Mastermind --> Board
+Mastermind --> "1..n" Attempt
 
-Board o-- "1" Combination
+Attempt --> Player
+Attempt --> Combination
+Attempt --> Board
+
+
+Combination <|-- SecretCombination
+Board o-- "1" SecretCombination
 
 Combination -- "1..n" CombinationRule
 
