@@ -2,7 +2,7 @@
 
 # Solución propuesta
 
-![](mastermind.png)
+![](mastermind2.png)
 
 
 # Vista pública de las clases del juego Mastermind
