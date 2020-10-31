@@ -11,7 +11,6 @@ class Player {
 }
 
 class Board {
-    void generateSecretCombination()
     bool equalsSecretCombination(combination)
 }
 
@@ -22,14 +21,19 @@ class Attempt {
 
 class Combination {
     boolean isValid()
-    void showValidationErrors()
+    void showErrors()
     boolean equals(combination)
-    static Combination generateRandom()
+    void randomize()
 }
 
 class SecretCombination {
 
 }
+
+class GestorIO {
+
+}
+
 
 class CombinationRule {
     boolean isValid(combination)
@@ -39,17 +43,18 @@ class CombinationRule {
 class CorrectColorsCombinationRule {}
 class CorrectLengthCombinationRule {}
 
-Mastermind --> Player
-Mastermind --> Board
-Mastermind --> "1..n" Attempt
+Mastermind *-- Player
+Mastermind *-- Board
+Mastermind *-- "1..n" Attempt
 
 Attempt --> Player
 Attempt --> Combination
 Attempt --> Board
 
+Player --> GestorIO
 
 Combination <|-- SecretCombination
-Board o-- "1" SecretCombination
+Board *-- "1" SecretCombination
 
 Combination -- "1..n" CombinationRule
 
